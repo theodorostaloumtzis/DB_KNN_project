@@ -28,22 +28,7 @@ def euclidean_distance(point1, point2):
 
 
 def calculate_hypersphere_volume(radius, dimensions):
-    
-    """
-    Calculate the volume of a hypersphere with a given radius and number of dimensions.
 
-    Parameters
-    ----------
-    radius : float
-        The radius of the hypersphere.
-    dimensions : int
-        The number of dimensions of the hypersphere.
-
-    Returns
-    -------
-    volume : float
-        The volume of the hypersphere.
-    """
     if dimensions < 1:
         raise ValueError("Dimensions must be a positive integer.")
     
@@ -52,34 +37,21 @@ def calculate_hypersphere_volume(radius, dimensions):
     return volume
 
 def calculate_density(data, radius):
-   
-    """
-    Calculate the density of each point in the dataset.
-
-    Parameters
-    ----------
-    data : array-like
-        The input dataset.
-    radius : float
-        The radius of the hypersphere around each point.
-
-    Returns
-    -------
-    densities : array
-        The density of each point in the dataset.
-    """
     densities = []
     n = len(data)
     dimensions = data.shape[1]  # Number of features (dimensions)
-    
+
+    # Calculate hypersphere volume once
+    volume = calculate_hypersphere_volume(radius, dimensions)
+
     for i in range(n):
         # Compute distances from data[i] to all other points in the dataset
         distances = np.linalg.norm(data - data[i], axis=1)  # Vectorized distance computation
         count_within_radius = np.sum(distances <= radius)  # Count neighbors within radius
-        volume = calculate_hypersphere_volume(radius, dimensions)  # Calculate hypersphere volume
         densities.append(count_within_radius / volume)
-    
+
     return np.array(densities)
+
 
 def calculate_degree_of_certainty(class_scores):
     
