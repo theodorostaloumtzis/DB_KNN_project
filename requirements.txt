@@ -8,3 +8,4 @@ plotly
 nbformat
 imblearn
 cppyy
+liac-arff
