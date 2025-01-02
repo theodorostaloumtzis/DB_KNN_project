@@ -202,6 +202,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 - Datasets are sourced from [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php) and [Kaggle](https://www.kaggle.com/).
 - ARFF file handling is implemented using the `liac-arff` library.
+- CPPYY is used for dynamic compilation of C++ code to improve performance of the algorithm.
 
 ---
 
