@@ -133,40 +133,6 @@ This repository contains a project that integrates Python and C++ to perform dat
   - `python3`
   - `python3-dev`
 
-### Python Dependencies
-
-Install the following Python packages via `requirements.txt`:
-
-```text
-numpy
-pandas
-scikit-learn
-matplotlib
-ucimlrepo
-seaborn
-plotly
-nbformat
-imblearn
-cppyy
-liac-arff
-```
-
-To install these dependencies, run:
-
-```bash
-pip install -r requirements.txt
-```
-
-### Jupyter Notebook
-
-Ensure the `notebook` package is installed:
-
-```bash
-pip install notebook
-```
-
----
-
 ## Project Structure
 
 ```text
