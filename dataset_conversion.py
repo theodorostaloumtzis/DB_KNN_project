@@ -4,7 +4,7 @@ import os
 
 def save_to_arff(df, arff_file, relation_name="dataset", class_column="class"):
     """
-    Save a pandas DataFrame to an ARFF file.
+    Save a pandas DataFrame to an ARFF file with the class column as categorical.
 
     :param df: Pandas DataFrame
     :param arff_file: Output ARFF file path
@@ -28,7 +28,7 @@ def save_to_arff(df, arff_file, relation_name="dataset", class_column="class"):
         'description': '',
         'relation': relation_name,
         'attributes': attributes,
-        'data': df.values.tolist()
+        'data': df.astype(str).values.tolist()  # Convert all data to strings to ensure proper ARFF formatting
     }
     with open(arff_file, 'w') as f:
         arff.dump(arff_data, f)
