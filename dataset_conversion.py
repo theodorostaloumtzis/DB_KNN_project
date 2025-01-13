@@ -74,6 +74,24 @@ heart_columns = [
 ]
 heart_data = pd.read_csv(heart_url, header=None, names=heart_columns, na_values="?")
 heart_data.rename(columns={"target": "class"}, inplace=True)  # Rename 'target' to 'class'
+
+from sklearn.impute import SimpleImputer
+from imblearn.combine import SMOTEENN
+
+# Handle missing values
+imputer = SimpleImputer(strategy="mean")
+heart_data.iloc[:, :-1] = imputer.fit_transform(heart_data.iloc[:, :-1])
+
+X = heart_data.iloc[:, :-1].values
+y = heart_data.iloc[:, -1].values
+
+# Use classbalancing teqnique
+smote_enn = SMOTEENN(random_state=47)
+X_resampled, y_resampled = smote_enn.fit_resample(X, y)
+
+heart_data = pd.DataFrame(X_resampled, columns=heart_data.columns[:-1])
+heart_data["target"] = y_resampled
+
 save_to_arff(heart_data, os.path.join(output_dir, "heart_disease.arff"), relation_name="heart_disease")
 
 # Dataset 5: Vehicle Silhouette
