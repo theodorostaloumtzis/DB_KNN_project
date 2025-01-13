@@ -1,0 +1,61 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 13 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     heart_disease-weka.filters.unsupervised.attribute.Standardize
+Instances:    303
+Attributes:   14
+              age
+              sex
+              cp
+              trestbps
+              chol
+              fbs
+              restecg
+              thalach
+              exang
+              oldpeak
+              slope
+              ca
+              thal
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 13 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         173               57.0957 %
+Incorrectly Classified Instances       130               42.9043 %
+Kappa statistic                          0.2638
+Mean absolute error                      0.1969
+Root mean squared error                  0.3263
+Relative absolute error                 75.9855 %
+Root relative squared error             90.8364 %
+Total Number of Instances              303     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.927    0.381    0.741      0.927    0.824      0.581    0.878     0.865     0
+                 0.255    0.194    0.226      0.255    0.239      0.058    0.601     0.220     1
+                 0.083    0.056    0.167      0.083    0.111      0.037    0.685     0.183     2
+                 0.114    0.052    0.222      0.114    0.151      0.084    0.764     0.261     3
+                 0.000    0.000    ?          0.000    ?          ?        0.823     0.114     4
+Weighted Avg.    0.571    0.254    ?          0.571    ?          ?        0.789     0.565     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   <-- classified as
+ 152   9   2   1   0 |   a = 0
+  32  14   3   6   0 |   b = 1
+  12  15   3   6   0 |   c = 2
+   8  17   6   4   0 |   d = 3
+   1   7   4   1   0 |   e = 4
+

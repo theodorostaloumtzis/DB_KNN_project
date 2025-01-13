@@ -1,0 +1,48 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 27 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     liver_disorders-weka.filters.unsupervised.attribute.Standardize
+Instances:    345
+Attributes:   7
+              mcv
+              alkphos
+              sgpt
+              sgot
+              gammagt
+              drinks
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 27 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         211               61.1594 %
+Incorrectly Classified Instances       134               38.8406 %
+Kappa statistic                          0.1715
+Mean absolute error                      0.4581
+Root mean squared error                  0.4754
+Relative absolute error                 94.0012 %
+Root relative squared error             96.3027 %
+Total Number of Instances              345     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.400    0.235    0.552      0.400    0.464      0.177    0.652     0.573     1
+                 0.765    0.600    0.638      0.765    0.695      0.177    0.652     0.700     2
+Weighted Avg.    0.612    0.447    0.602      0.612    0.598      0.177    0.652     0.647     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  58  87 |   a = 1
+  47 153 |   b = 2
+

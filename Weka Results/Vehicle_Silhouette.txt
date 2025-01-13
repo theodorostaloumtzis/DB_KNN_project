@@ -1,0 +1,64 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 5 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     vehicle_silhouette-weka.filters.unsupervised.attribute.Standardize
+Instances:    846
+Attributes:   19
+              COMPACTNESS
+              CIRCULARITY
+              DISTANCE_CIRCULARITY
+              RADIUS_RATIO
+              PR.AXIS_ASPECT_RATIO
+              MAX.LENGTH_ASPECT_RATIO
+              SCATTER_RATIO
+              ELONGATEDNESS
+              PR.AXIS_RECTANGULARITY
+              MAX.LENGTH_RECTANGULARITY
+              SCALED_VARIANCE_MAJOR
+              SCALED_VARIANCE_MINOR
+              SCALED_RADIUS
+              SKEWNESS_MAJOR
+              SKEWNESS_MINOR
+              KURTOSIS_MINOR
+              KURTOSIS_MAJOR
+              HOLLOWS_RATIO
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 5 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         602               71.1584 %
+Incorrectly Classified Instances       244               28.8416 %
+Kappa statistic                          0.6151
+Mean absolute error                      0.1728
+Root mean squared error                  0.3069
+Relative absolute error                 46.0962 %
+Root relative squared error             70.8913 %
+Total Number of Instances              846     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.982    0.070    0.829      0.982    0.899      0.866    0.992     0.969     bus
+                 0.476    0.129    0.552      0.476    0.511      0.365    0.796     0.546     opel
+                 0.535    0.153    0.547      0.535    0.541      0.385    0.805     0.549     saab
+                 0.859    0.034    0.886      0.859    0.872      0.834    0.980     0.926     van
+Weighted Avg.    0.712    0.098    0.701      0.712    0.704      0.610    0.892     0.745     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   <-- classified as
+ 214   1   1   2 |   a = bus
+  13 101  87  11 |   b = opel
+  21  71 116   9 |   c = saab
+  10  10   8 171 |   d = van
+

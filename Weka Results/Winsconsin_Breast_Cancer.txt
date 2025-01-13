@@ -1,0 +1,72 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 9 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     wdbc-weka.filters.unsupervised.attribute.Standardize
+Instances:    569
+Attributes:   31
+              class
+              Radius_Mean
+              Texture_Mean
+              Perimeter_Mean
+              Area_Mean
+              Smoothness_Mean
+              Compactness_Mean
+              Concavity_Mean
+              Concave_Points_Mean
+              Symmetry_Mean
+              Fractal_Dimension_Mean
+              Radius_SE
+              Texture_SE
+              Perimeter_SE
+              Area_SE
+              Smoothness_SE
+              Compactness_SE
+              Concavity_SE
+              Concave_Points_SE
+              Symmetry_SE
+              Fractal_Dimension_SE
+              Radius_Worst
+              Texture_Worst
+              Perimeter_Worst
+              Area_Worst
+              Smoothness_Worst
+              Compactness_Worst
+              Concavity_Worst
+              Concave_Points_Worst
+              Symmetry_Worst
+              Fractal_Dimension_Worst
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 9 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         556               97.7153 %
+Incorrectly Classified Instances        13                2.2847 %
+Kappa statistic                          0.9507
+Mean absolute error                      0.0596
+Root mean squared error                  0.1623
+Relative absolute error                 12.7344 %
+Root relative squared error             33.5687 %
+Total Number of Instances              569     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.994    0.052    0.970      0.994    0.982      0.951    0.991     0.991     B
+                 0.948    0.006    0.990      0.948    0.969      0.951    0.991     0.988     M
+Weighted Avg.    0.977    0.035    0.977      0.977    0.977      0.951    0.991     0.990     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 355   2 |   a = B
+  11 201 |   b = M
+
